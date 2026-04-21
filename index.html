@@ -114,7 +114,7 @@
       -webkit-overflow-scrolling:touch;
     }
     .nav-links::-webkit-scrollbar{display:none}
-    .nav-link, .ghost-btn, .solid-btn, .lang-btn{
+    .nav-link, .ghost-btn, .solid-btn{
       padding:12px 18px;
       border-radius:999px;
       border:1px solid transparent;
@@ -125,7 +125,7 @@
       flex:0 0 auto;
       white-space:nowrap;
     }
-    .nav-link:hover, .ghost-btn:hover, .lang-btn:hover{
+    .nav-link:hover, .ghost-btn:hover{
       transform:translateY(-1px);
       background:rgba(255,255,255,.045);
       color:#fff;
@@ -136,13 +136,13 @@
       color:#091224;
       box-shadow:0 12px 30px rgba(255,255,255,.08);
     }
-    .lang-btn{
+    /* .lang-btn{
       color:rgba(238,244,255,.88);
       border-inline-start:1px solid rgba(255,255,255,.08);
       border-radius:0;
       padding-inline-start:16px;
-    }
-    .nav-link, .lang-btn{
+    } */
+    .nav-link{
       font-family:"Poppins", Inter, ui-sans-serif, system-ui, sans-serif;
       font-weight:500;
       letter-spacing:-.01em;
@@ -548,7 +548,7 @@
         padding:6px;
         gap:4px;
       }
-      .nav-link,.ghost-btn,.solid-btn,.lang-btn{padding:10px 13px; font-size:14px}
+      .nav-link,.ghost-btn,.solid-btn{padding:10px 13px; font-size:14px}
       .hero-main,.contact-card,.about-card,.highlight-card,.skill-card,.timeline-card,.project-card,.cta-card,.footer-card{padding:20px}
       #skills.section{padding-top:28px; padding-bottom:18px}
       #skills .section-head{margin-bottom:12px}
@@ -643,7 +643,7 @@
         <a class="nav-link" href="#experience" data-nav="experience" data-t="navExperience">Experience</a>
         <a class="nav-link" href="#projects" data-nav="projects" data-t="navProjects">Projects</a>
         <a class="nav-link" href="#contact" data-nav="contact" data-t="navContact">Contact</a>
-        <button class="lang-btn" id="langBtn">العربية</button>
+        <!-- <button class="lang-btn" id="langBtn">العربية</button> -->
       </nav>
     </div>
   </header>
@@ -1324,7 +1324,7 @@
       currentLang = lang;
       document.documentElement.lang = t.lang;
       document.body.dir = t.dir;
-      document.getElementById('langBtn').textContent = t.langBtn;
+      // document.getElementById('langBtn').textContent = t.langBtn;
       document.querySelectorAll('[data-t]').forEach(el => el.textContent = t[el.dataset.t]);
       ids.forEach(id => {
         const el = document.getElementById(id);
@@ -1344,9 +1344,9 @@
       renderTags('contactBadges', t.contactBadges);
     }
 
-    document.getElementById('langBtn').addEventListener('click', () => {
-      applyLanguage(currentLang === 'en' ? 'ar' : 'en');
-    });
+    // document.getElementById('langBtn').addEventListener('click', () => {
+    //   applyLanguage(currentLang === 'en' ? 'ar' : 'en');
+    // });
 
     const sections = [...document.querySelectorAll('main section[id], .section[id]')];
     const navLinks = [...document.querySelectorAll('.nav-link')];
