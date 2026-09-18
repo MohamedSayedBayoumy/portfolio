@@ -342,41 +342,72 @@
       margin-top: 26px
     }
 
-    .phone-row {
+    /* Phone pill container */
+    .phone-pill {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: border-color .25s, box-shadow .25s;
+    }
+
+    .phone-pill:hover {
+      border-color: rgba(118, 240, 209, .3);
+      box-shadow: 0 0 0 3px rgba(118, 240, 209, .07);
+    }
+
+    .phone-pill-link {
       display: flex;
       align-items: center;
-      gap: 8px;
+      padding: 13px 20px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: rgba(220, 230, 245, .9);
+      letter-spacing: .04em;
+      text-decoration: none;
+      transition: color .2s;
+      white-space: nowrap;
+    }
+
+    .phone-pill-link:hover {
+      color: #fff;
+    }
+
+    .phone-pill-divider {
+      width: 1px;
+      align-self: stretch;
+      background: rgba(255, 255, 255, .12);
+      flex-shrink: 0;
     }
 
     .copy-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, .15);
-      background: rgba(255, 255, 255, .06);
-      color: var(--muted);
+      width: 54px;
+      align-self: stretch;
+      background: transparent;
+      border: none;
+      color: rgba(190, 205, 230, .65);
       cursor: pointer;
-      transition: background .2s, border-color .2s, color .2s, transform .15s;
+      transition: background .2s, color .2s;
       flex-shrink: 0;
     }
 
     .copy-btn:hover {
-      background: rgba(118, 240, 209, .15);
-      border-color: rgba(118, 240, 209, .4);
+      background: rgba(118, 240, 209, .1);
       color: var(--accent);
-      transform: scale(1.08);
     }
 
     .copy-btn:active {
-      transform: scale(.94);
+      background: rgba(118, 240, 209, .18);
     }
 
     .copy-btn svg {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       pointer-events: none;
     }
 
@@ -386,21 +417,22 @@
       bottom: 32px;
       left: 50%;
       transform: translateX(-50%) translateY(20px);
-      background: rgba(16, 28, 44, .95);
+      background: rgba(14, 24, 40, .96);
       border: 1px solid rgba(118, 240, 209, .35);
       color: var(--accent);
-      padding: 10px 22px;
+      padding: 11px 24px;
       border-radius: 50px;
-      font-size: .85rem;
+      font-size: .84rem;
       font-weight: 600;
-      letter-spacing: .02em;
+      letter-spacing: .03em;
       pointer-events: none;
       opacity: 0;
-      transition: opacity .25s, transform .25s;
+      transition: opacity .28s, transform .28s;
       z-index: 9999;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       white-space: nowrap;
+      box-shadow: 0 8px 32px rgba(0,0,0,.35);
     }
 
     .copy-toast.show {
@@ -1399,8 +1431,9 @@
             </div>
             <div class="hero-cta">
               <a class="solid-btn" href="mailto:mohamedsayedbayoumy639@gmail.com">mohamedsayedbayoumy639@gmail.com</a>
-              <div class="phone-row">
-                <a class="ghost-btn" href="https://wa.me/201114205280" target="_blank" rel="noreferrer" id="phoneLink">+20 111 420 5280</a>
+              <div class="phone-pill">
+                <a class="phone-pill-link" href="https://wa.me/201114205280" target="_blank" rel="noreferrer" id="phoneLink" aria-label="Chat on WhatsApp">+20 111 420 5280</a>
+                <span class="phone-pill-divider" aria-hidden="true"></span>
                 <button class="copy-btn" id="copyPhoneBtn" aria-label="Copy phone number" title="Copy phone number">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <rect x="9" y="9" width="13" height="13" rx="2"/>
@@ -2160,7 +2193,7 @@
             ta.select();
             document.execCommand('copy');
             document.body.removeChild(ta);
-          } catch (e) { }
+          } catch (e) {}
           showToast();
         }
       });
