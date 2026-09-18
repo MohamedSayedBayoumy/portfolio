@@ -1365,7 +1365,7 @@
     </svg>
   </a>
 
-<script>
+ <script>
     const content = {
       en: {
         dir: 'ltr',
@@ -1461,87 +1461,130 @@
             kicker: 'Passenger Transportation',
             title: 'Super Jet',
             badge: '100K+ downloads',
-            desc: 'Production passenger transportation app for intercity bus booking, ticketing, and trip management.',
+            desc: 'Production passenger transportation app for intercity bus booking, ticketing, payments, and trip management across Android and iOS.',
             highlights: [
-              'Maintained and optimized core booking flows for 100K+ users, covering trip search, seat selection, and payments.',
-              'Implemented an Exponential Backoff strategy for API retry mechanisms, ensuring seamless user experience during network instability.',
-              'Handled Android and iOS store submissions, and post-release debugging using Firebase Crashlytics.'
+              'Worked on core travel flows including trip search, booking, seat selection, ticket handling, cancellation, user profile, and payment flows.',
+              'Integrated Vodafone Cash payment support and maintained checkout-related mobile flows for real passenger booking activity.',
+              'Handled Android and iOS release delivery, including build preparation, store submissions, production fixes, and post-release support.',
+              'Improved existing production features through bug fixing, refactoring, API integration, notifications, Crashlytics monitoring, and app stability work.'
             ],
-            tags: ['Flutter', 'REST APIs', 'Exponential Backoff', 'Crashlytics', 'Releases'],
+            tags: ['Flutter', 'Transportation', 'Booking', 'Payments', 'REST APIs', 'Notifications', 'Crashlytics', 'Android Release', 'iOS Release'],
             links: [
               { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.superjet.app&hl=en_US' },
               { label: 'Apple Store', href: 'https://apps.apple.com/us/app/superjet-%D8%B3%D9%88%D8%A8%D8%B1%D8%AC%D9%8A%D8%AA/id6751532907' }
             ]
           },
           {
-            kicker: 'B2B Hospitality System',
-            title: 'TDH (The Digital Hotilier)',
-            badge: '2K+ downloads',
-            desc: 'Secure B2B internal hotel management system focused on operational reliability and real-time communication.',
-            highlights: [
-              'Built real-time communication and location tracking using WebSockets, Push-to-Talk, and geofencing.',
-              'Implemented mTLS pinning and JWT refresh-token handling for production login/session flows.',
-              'Built an automated Integration Testing pipeline using Patrol and Firebase Test Lab to execute core flows on virtual devices before staging releases.'
-            ],
-            tags: ['Clean Architecture', 'WebSockets', 'mTLS Pinning', 'Patrol', 'Geofencing'],
-            links: [
-              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.starttech.tdh' },
-              { label: 'Apple Store', href: 'https://apps.apple.com/us/app/teamstream/id6748911105' }
-            ]
-          },
-          {
-            kicker: 'EdTech Platform',
-            title: 'Monglish',
-            badge: '1,000+ downloads',
-            desc: 'Private learning platform built for enrolled students with real-time communication and offline-friendly access.',
-            highlights: [
-              'Built a real-time group chat feature supporting text and voice notes with dynamic audio waveform rendering, powered by WebSockets.',
-              'Implemented cache-first local storage for materials and previous sessions.',
-              'Used secure storage for sensitive user data and authentication handling.'
-            ],
-            tags: ['WebSockets', 'BLoC/Cubit', 'Cache-first', 'Secure Storage', 'Audio Processing'],
-            links: [
-              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.monglish.app' },
-              { label: 'Apple Store', href: 'https://apps.apple.com/us/app/monglish-academy/id6743313312' }
-            ]
-          },
-          {
             kicker: 'Sports Booking',
             title: 'SPOR Qatar',
             badge: '5K+ downloads',
-            desc: 'Qatar-based sports booking app supporting 800+ daily active users for field reservations.',
+            desc: 'Qatar-based sports booking app for football fields and club sports activities, with daily active users booking facilities, managing schedules, and tracking reservation status.',
             highlights: [
-              'Implemented Cache Validation Pattern to load cached data first, refresh stale content, and reduce unnecessary API calls.',
-              'Improved app smoothness and responsiveness using Dart isolates and performance profiling.',
-              'Supported CI/CD and automated release workflows for App Store and Google Play.'
+              'Built and maintained booking flows for football fields and club sports activities, including availability, calendar-based selection, booking status, and user reservation history.',
+              'Implemented checkout flow through payment WebView integration to support paid sports reservations inside the mobile app.',
+              'Worked on approval-related flows, user booking history, and production fixes supporting 200–500 daily active users.',
+              'Used GetX-based state management with API integration, routing, error handling, and release support across Android and iOS.'
             ],
-            tags: ['GetX', 'Cache Validation', 'Dart Isolates', 'CI/CD', 'Performance'],
+            tags: ['Flutter', 'GetX', 'Sports Booking', 'Reservations', 'Calendar', 'Payment WebView', 'REST APIs', 'Android Release', 'iOS Release'],
             links: [
               { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.developerinqatar.spor&hl=en_US' },
               { label: 'Apple Store', href: 'https://apps.apple.com/us/app/spor-qatar/id1637054336' }
             ]
           },
           {
+            kicker: 'Recruitment Platform',
+            title: 'R7',
+            badge: 'Saudi Arabia',
+            desc: 'Production recruitment platform built for real-time communication, secure integrations, and location-driven attendance workflows.',
+            highlights: [
+              'Integrated secure REST APIs with retries and GraphQL queries and mutations, robust error handling, and JWT-based authentication with refresh tokens.',
+              'Implemented SSL/TLS pinning to secure sensitive API traffic and support a stronger mobile security posture.',
+              'Delivered real-time features including push-to-talk voice, live location streaming, geofencing-based attendance, and background location tracking.',
+              'Added App Attest and Play Integrity checks to detect tampered environments and harden authentication flows.'
+            ],
+            tags: ['Clean Architecture', 'Cubit', 'REST APIs', 'graphql_flutter', 'FCM', 'go_router', 'Google Maps', 'Geofencing', 'WebSockets', 'Agora', 'Background Location', 'Fastlane', 'Codemagic'],
+            links: [
+              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.recruitment.r7' },
+              { label: 'Apple Store', href: 'https://apps.apple.com/eg/app/recuirementseven/id1672943116' },
+              { label: 'View Demo', href: 'https://drive.google.com/file/d/1I0b0ntWHY5oTFKcAPxWOxP0plRr16B1K/view' }
+            ]
+          },
+          {
+            kicker: 'Hotel Management System',
+            title: 'TDH',
+            badge: 'Internal Product',
+            desc: 'Internal hotel management system focused on reliability, security, local data flows, and smooth performance in daily operations.',
+            highlights: [
+              'Implemented local notification flows using flutter_local_notifications to support reminders, status updates, and user re-engagement.',
+              'Integrated biometric authentication using device-native verification to strengthen mobile security.',
+              'Used Dart Isolates and Flutter DevTools profiling to prevent UI thread blocking and maintain smooth performance.',
+              'Implemented local persistence using SQLite and Hive to support caching, offline access, and reliable mobile data flows.'
+            ],
+            tags: ['Clean Architecture', 'Cubit', 'REST APIs', 'Hive', 'Secure Storage', 'Dart Isolates', 'Crashlytics', 'SQLite'],
+            links: [
+              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.starttech.tdh' },
+              { label: 'Apple Store', href: 'https://apps.apple.com/us/app/teamstream/id6748911105' },
+              { label: 'This Internal System', href: '#' }
+            ]
+          },
+          {
+            kicker: 'English Learning Platform',
+            title: 'Monglish',
+            badge: '500+ downloads',
+            desc: 'Private learning platform built for enrolled students with authenticated access, real-time communication, reliable content delivery, and offline-friendly assignment workflows.',
+            highlights: [
+              'Built and shipped a private learning app for enrolled students with authenticated access and no public sign-up, reaching 500+ downloads.',
+              'Built real-time chat using WebSockets with a dedicated BLoC module and clear upload and download progress indicators.',
+              'Delivered real-time tracking using WebSockets, improving update latency and user responsiveness.',
+              'Implemented offline-first autosave for assignments with local persistence and a sync-ready structure to help prevent data loss.'
+            ],
+            tags: ['Clean Architecture', 'Cubit', 'BLoC', 'REST APIs', 'FCM', 'Video Player', 'Chewie', 'Dio', 'Downloads', 'WebSockets'],
+            links: [
+              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.monglish.app' },
+              { label: 'Apple Store', href: 'https://apps.apple.com/us/app/monglish-academy/id6743313312' },
+              { label: 'View Demo', href: 'https://drive.google.com/file/d/1xedEpX-e2zo62qkeCknNmeHiKsamdLwd/view' }
+            ]
+          },
+          {
+            kicker: 'E-commerce',
+            title: 'MHG',
+            badge: '1,000+ downloads',
+            desc: 'Production e-commerce application improved for shopping flows, maintainable architecture, engagement tooling, and secure payment experiences.',
+            highlights: [
+              'Enhanced and maintained a production e-commerce app with 1,000+ downloads, improving categories, product browsing, cart, and checkout flows.',
+              'Used build_runner, freezed, and json_serializable to generate immutable models, sealed states, and reliable JSON parsing code.',
+              'Architected app-wide state flows using GetX for state management, dependency injection, and routing.',
+              'Integrated social login, analytics tracking, push notifications, and secure payment flows including Apple Pay, Visa, and BNPL.'
+            ],
+            tags: ['GetX', 'MVVM', 'REST APIs', 'FCM', 'Firebase Authentication', 'Analytics', 'Social Login', 'Payments'],
+            links: [
+              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.starttech.mhgboutique&hl=en' },
+              { label: 'Apple Store', href: 'https://apps.apple.com/eg/app/mhgboutique/id6463312590' },
+              { label: 'View Demo', href: 'https://drive.google.com/file/d/1zSCkNlK5epicDfkHwZjK731jV7Fjxysz/view' }
+            ]
+          },
+          {
             kicker: 'Automotive Marketplace',
             title: 'SpareGO',
             badge: '10,000+ downloads',
-            desc: 'Production spare parts app stabilized and maintained for real-world reliability.',
+            desc: 'Production spare parts app stabilized and maintained for real-world reliability, secure mobile sessions, and stronger monitoring.',
             highlights: [
-              'Refactored core user flows and enforced engineering standards to stabilize the app.',
-              'Integrated robust REST APIs with error handling, pagination, and secure communication practices.',
-              'Developed reusable Flutter UI components to accelerate delivery and ensure consistency.'
+              'Maintained and stabilized a production app with 10,000+ downloads, improving reliability and usability across core user flows.',
+              'Used flutter_secure_storage to protect sensitive mobile data such as tokens and session-related credentials.',
+              'Integrated Firebase Cloud Messaging, Crashlytics, and Analytics to improve monitoring, issue visibility, and app stability.'
             ],
-            tags: ['REST APIs', 'Refactoring', 'UI Architecture', 'Pagination'],
+            tags: ['Cubit', 'REST APIs', 'FCM', 'Performance Optimization', 'Crashlytics', 'MVVM', 'SharedPreferences'],
             links: [
-              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.nilogy.sparego' }
+              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.nilogy.sparego' },
+              { label: 'View Demo', href: 'https://drive.google.com/file/d/16FXOCsZ5pp4H21neN_2rQpNwiQzXt-oA/view' }
             ]
           }
         ],
         contactTitle: "Let's build something solid",
-        contactIntro: 'Open to opportunities where product quality, architecture, and maintainability matter.',
+        contactIntro: 'Open to opportunities where product quality, performance, and maintainability matter.',
         contactCardTitle: "What you'll get",
-        contactBadges: ['Clean Architecture mindset', 'Strong delivery ownership', 'mTLS & Security focus', 'Production release experience', 'Scalable Flutter codebase'],
-        footerRole: 'Senior Flutter Engineer',
+        contactBadges: ['Clean architecture mindset', 'Strong delivery ownership', 'Cross-team collaboration', 'Production release experience', 'Scalable Flutter codebase'],
+        footerRole: 'Flutter Developer — Android & iOS',
         backTop: 'Back to top'
       },
       ar: {
@@ -1616,7 +1659,7 @@
               'تقليل حجم تطبيق Android من 300 ميجابايت إلى 30 ميجابايت باستخدام تحسينات R8 وإزالة الـ debug symbols.',
               'هندسة ميزات لحظية باستخدام WebSockets، وتطبيق mTLS Pinning مع إدارة JWT لتأمين جلسات الاستخدام في تطبيقات الـ B2B.',
               'بناء خطوط Integration Testing أوتوماتيكية باستخدام Patrol و Firebase Test Lab لاختبار المسارات الأساسية على أجهزة افتراضية.',
-              'إعادة هيكلة أكثر من 4 Modules أساسية وتطبيق أنماط Cache Validation Pattern لتحسين الصيانة.'
+              'إعادة هيكلة أكثر من 4 Modules الأساسية وتطبيق أنماط Cache Validation Pattern لتحسين الصيانة.'
             ]
           },
           {
@@ -1633,7 +1676,7 @@
           }
         ],
         projectsTitle: 'مشاريع مختارة',
-        projectsIntro: 'أنظمة تعمل في بيئة الإنتاج عبر النقل، أنظمة الفنادق B2B، التعليم، والتجارة الإلكترونية.',
+        projectsIntro: 'منتجات production حقيقية عبر التوظيف والفنادق والتجارة الإلكترونية وقطع الغيار والتعليم.',
         projects: [
           {
             kicker: 'نقل الركاب',
@@ -1649,38 +1692,6 @@
             links: [
               { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.superjet.app&hl=en_US' },
               { label: 'Apple Store', href: 'https://apps.apple.com/us/app/superjet-%D8%B3%D9%88%D8%A8%D8%B1%D8%AC%D9%8A%D8%AA/id6751532907' }
-            ]
-          },
-          {
-            kicker: 'نظام إدارة فنادق B2B',
-            title: 'TDH (The Digital Hotilier)',
-            badge: '+2K تحميل',
-            desc: 'نظام داخلي آمن لإدارة الفنادق (B2B) يركز على الاعتمادية التشغيلية والتواصل اللحظي.',
-            highlights: [
-              'بناء ميزات التواصل اللحظي وتتبع الموقع باستخدام WebSockets، و Push-to-Talk، والـ Geofencing.',
-              'تطبيق mTLS Pinning وإدارة JWT Refresh-Token لتأمين عمليات تسجيل الدخول والجلسات.',
-              'بناء خطوط اختبار أوتوماتيكية (Integration Testing) باستخدام Patrol و Firebase Test Lab.'
-            ],
-            tags: ['Clean Architecture', 'WebSockets', 'mTLS Pinning', 'Patrol', 'Geofencing'],
-            links: [
-              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.starttech.tdh' },
-              { label: 'Apple Store', href: 'https://apps.apple.com/us/app/teamstream/id6748911105' }
-            ]
-          },
-          {
-            kicker: 'منصة تعليمية',
-            title: 'Monglish',
-            badge: '+1,000 تحميل',
-            desc: 'منصة تعليمية للطلاب المسجلين تدعم التواصل اللحظي والتخزين المحلي للعمل بدون إنترنت.',
-            highlights: [
-              'بناء شات جماعي لحظي يدعم النصوص والصوت مع رسم حي للموجات الصوتية باستخدام WebSockets.',
-              'تطبيق نمط (Cache-first) للتخزين المحلي للمواد التعليمية وجلسات الشرح السابقة.',
-              'استخدام التخزين المشفر (Secure storage) للتعامل مع بيانات المستخدم الحساسة.'
-            ],
-            tags: ['WebSockets', 'BLoC/Cubit', 'Cache-first', 'Secure Storage', 'Audio Processing'],
-            links: [
-              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.monglish.app' },
-              { label: 'Apple Store', href: 'https://apps.apple.com/us/app/monglish-academy/id6743313312' }
             ]
           },
           {
@@ -1700,6 +1711,76 @@
             ]
           },
           {
+            kicker: 'منصة توظيف',
+            title: 'R7',
+            badge: 'السعودية',
+            desc: 'منصة توظيف production مبنية للتواصل اللحظي والدمج الآمن وتدفقات الحضور المعتمدة على الموقع.',
+            highlights: [
+              'دمج REST APIs آمنة مع retries وGraphQL queries وmutations وerror handling قوي وJWT authentication مع refresh tokens.',
+              'تنفيذ SSL/TLS pinning لتأمين حركة الـ API الحساسة ودعم مستوى أمان أقوى داخل التطبيق.',
+              'تسليم مزايا لحظية مثل push-to-talk voice وlive location streaming وgeofencing-based attendance مع background location tracking.',
+              'أضفت فحوصات App Attest وPlay Integrity لاكتشاف البيئات المعدّلة أو غير الموثوقة وتعزيز أمان تدفقات المصادقة.'
+            ],
+            tags: ['Clean Architecture', 'Cubit', 'REST APIs', 'graphql_flutter', 'FCM', 'go_router', 'Google Maps', 'Geofencing', 'WebSockets', 'Agora', 'Background Location', 'Fastlane', 'Codemagic'],
+            links: [
+              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.recruitment.r7' },
+              { label: 'Apple Store', href: 'https://apps.apple.com/eg/app/recuirementseven/id1672943116' },
+              { label: 'عرض الديمو', href: 'https://drive.google.com/file/d/1I0b0ntWHY5oTFKcAPxWOxP0plRr16B1K/view' }
+            ]
+          },
+          {
+            kicker: 'نظام إدارة فنادق B2B',
+            title: 'TDH (The Digital Hotilier)',
+            badge: '+2K تحميل',
+            desc: 'نظام داخلي آمن لإدارة الفنادق (B2B) يركز على الاعتمادية التشغيلية والتواصل اللحظي.',
+            highlights: [
+              'بناء ميزات التواصل اللحظي وتتبع الموقع باستخدام WebSockets، و Push-to-Talk، والـ Geofencing.',
+              'تطبيق mTLS Pinning وإدارة JWT Refresh-Token لتأمين عمليات تسجيل الدخول والجلسات.',
+              'بناء خطوط اختبار أوتوماتيكية (Integration Testing) باستخدام Patrol و Firebase Test Lab.'
+            ],
+            tags: ['Clean Architecture', 'WebSockets', 'mTLS Pinning', 'Patrol', 'Geofencing'],
+            links: [
+              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.starttech.tdh' },
+              { label: 'Apple Store', href: 'https://apps.apple.com/us/app/teamstream/id6748911105' },
+              { label: 'نظام داخلي', href: '#' }
+            ]
+          },
+          {
+            kicker: 'منصة تعليمية',
+            title: 'Monglish',
+            badge: '+1,000 تحميل',
+            desc: 'منصة تعليمية للطلاب المسجلين تدعم التواصل اللحظي والتخزين المحلي للعمل بدون إنترنت.',
+            highlights: [
+              'بناء شات جماعي لحظي يدعم النصوص والصوت مع رسم حي للموجات الصوتية باستخدام WebSockets.',
+              'تطبيق نمط (Cache-first) للتخزين المحلي للمواد التعليمية وجلسات الشرح السابقة.',
+              'استخدام التخزين المشفر (Secure storage) للتعامل مع بيانات المستخدم الحساسة.'
+            ],
+            tags: ['WebSockets', 'BLoC/Cubit', 'Cache-first', 'Secure Storage', 'Audio Processing'],
+            links: [
+              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.monglish.app' },
+              { label: 'Apple Store', href: 'https://apps.apple.com/us/app/monglish-academy/id6743313312' },
+              { label: 'عرض الديمو', href: 'https://drive.google.com/file/d/1xedEpX-e2zo62qkeCknNmeHiKsamdLwd/view' }
+            ]
+          },
+          {
+            kicker: 'تجارة إلكترونية',
+            title: 'MHG',
+            badge: '+1,000 تحميل',
+            desc: 'تطبيق e-commerce production تم تطويره لتحسين مسارات التسوق وهيكلة التطبيق ووسائل التفاعل وتجارب الدفع الآمنة.',
+            highlights: [
+              'تحسين وصيانة تطبيق e-commerce احترافي تجاوز +1,000 تنزيل مع تطوير مسارات الأقسام وتصفح المنتجات والسلة وcheckout.',
+              'استخدام build_runner وfreezed وjson_serializable لإنشاء immutable models وsealed states وJSON parsing موثوق.',
+              'بناء app-wide state flows باستخدام GetX لإدارة الحالة وdependency injection وrouting.',
+              'دمج social login وanalytics tracking وpush notifications ووسائل دفع آمنة مثل Apple Pay وVisa وBNPL.'
+            ],
+            tags: ['GetX', 'MVVM', 'REST APIs', 'FCM', 'Firebase Authentication', 'Analytics', 'Social Login', 'Payments'],
+            links: [
+              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.starttech.mhgboutique&hl=en' },
+              { label: 'Apple Store', href: 'https://apps.apple.com/eg/app/mhgboutique/id6463312590' },
+              { label: 'عرض الديمو', href: 'https://drive.google.com/file/d/1zSCkNlK5epicDfkHwZjK731jV7Fjxysz/view' }
+            ]
+          },
+          {
             kicker: 'سوق قطع غيار السيارات',
             title: 'SpareGO',
             badge: '+10,000 تحميل',
@@ -1711,7 +1792,8 @@
             ],
             tags: ['REST APIs', 'Refactoring', 'UI Architecture', 'Pagination'],
             links: [
-              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.nilogy.sparego' }
+              { label: 'Google Play', href: 'https://play.google.com/store/apps/details?id=com.nilogy.sparego' },
+              { label: 'عرض الديمو', href: 'https://drive.google.com/file/d/16FXOCsZ5pp4H21neN_2rQpNwiQzXt-oA/view' }
             ]
           }
         ],
