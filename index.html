@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -340,6 +340,72 @@
       flex-wrap: wrap;
       align-items: center;
       margin-top: 26px
+    }
+
+    .phone-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      background: rgba(255, 255, 255, .06);
+      color: var(--muted);
+      cursor: pointer;
+      transition: background .2s, border-color .2s, color .2s, transform .15s;
+      flex-shrink: 0;
+    }
+
+    .copy-btn:hover {
+      background: rgba(118, 240, 209, .15);
+      border-color: rgba(118, 240, 209, .4);
+      color: var(--accent);
+      transform: scale(1.08);
+    }
+
+    .copy-btn:active {
+      transform: scale(.94);
+    }
+
+    .copy-btn svg {
+      width: 16px;
+      height: 16px;
+      pointer-events: none;
+    }
+
+    /* Toast notification */
+    .copy-toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(16, 28, 44, .95);
+      border: 1px solid rgba(118, 240, 209, .35);
+      color: var(--accent);
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .25s, transform .25s;
+      z-index: 9999;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      white-space: nowrap;
+    }
+
+    .copy-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
     }
 
     .mini-grid {
@@ -1333,7 +1399,16 @@
             </div>
             <div class="hero-cta">
               <a class="solid-btn" href="mailto:mohamedsayedbayoumy639@gmail.com">mohamedsayedbayoumy639@gmail.com</a>
-              <a class="ghost-btn" href="tel:+201114205280">+20 111 420 5280</a>
+              <div class="phone-row">
+                <a class="ghost-btn" href="https://wa.me/201114205280" target="_blank" rel="noreferrer" id="phoneLink">+20 111 420 5280</a>
+                <button class="copy-btn" id="copyPhoneBtn" aria-label="Copy phone number" title="Copy phone number">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="copy-toast" id="copyToast">📋 Phone number copied!</div>
               <a class="ghost-btn" href="https://www.linkedin.com/in/mohamed-sayed-bayoumy-036205232" target="_blank"
                 rel="noreferrer">LinkedIn</a>
             </div>
@@ -2060,6 +2135,36 @@
     if (heroMainEl && heroCutoutEl && heroCutoutEl.src) {
       heroMainEl.style.setProperty('--hero-bg-image', `url("${heroCutoutEl.src}")`);
     }
+
+    // Copy phone number
+    (function () {
+      const btn = document.getElementById('copyPhoneBtn');
+      const toast = document.getElementById('copyToast');
+      if (!btn || !toast) return;
+      let toastTimer;
+      btn.addEventListener('click', () => {
+        const phone = '+201114205280';
+        const showToast = () => {
+          toast.classList.add('show');
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(phone).then(showToast).catch(showToast);
+        } else {
+          try {
+            const ta = document.createElement('textarea');
+            ta.value = phone;
+            ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          } catch (e) { }
+          showToast();
+        }
+      });
+    })();
 
   </script>
 
